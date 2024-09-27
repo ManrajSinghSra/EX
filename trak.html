@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Dashboard</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" href="track.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+   
+</head>
+<body>
+    <nav>
+       <a href="index.html"> <img class=".logo" src="logo.png"
+        alt="" height="100px"></a>
+        <div id="nav-part2">
+            <h4><a href="solution.html">Solutions</a></h4>
+            <h4><a href="project.html">Projects</a></h4>
+            <h4><a href="blogs.html">Blogs</a></h4>
+            <h4><a href="index.html">Home</a></h4>
+        </div>
+    </nav>
+    <h1 class="heading">Carbon Footprint Dashboard</h1>   
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Emissions')" id="defaultOpen"><a>Emissions</a></button>
+        <button class="tablinks" onclick="openTab(event, 'Sinks')"><a>Carbon Sinks</a></button>
+        <button class="tablinks" onclick="openTab(event, 'Analysis')"><a>Gap Analysis</a></button>
+    </div>
+
+    <div id="Emissions" class="tabcontent">
+        <h2>Emissions</h2>
+        <form id="emissionsForm">
+         
+            <h3>Input Emissions Data</h3>
+            <div class="form-group">
+                <label for="excavation">1->Excavation emissions (tons CO2e):</label>
+                <input type="number" id="excavation" required>
+            </div>
+            <div class="form-group">
+                <label for="transportation">2->Transportation emissions (tons CO2e):</label>
+                <input type="number" id="transportation" required>
+            </div>
+            <div class="form-group">
+                <label for="equipment">3->Equipment usage emissions (tons CO2e):</label>
+                <input type="number" id="equipment" required>
+            </div>
+            <div class="form-group">
+                <label for="processing">4->Processing emissions (tons CO2e):</label>
+                <input type="number" id="processing" required>
+            </div>
+            <button class="update" type="submit"><a>Update Emissions</a></button>
+        </form>
+        <h3>If your emission Execedds this Ran</h3>
+        <div class="chart-container">
+            <canvas id="emissionsChart"></canvas>
+        </div>
+    </div>
+
+    <div id="Sinks" class="tabcontent">
+        <h2>Carbon Sinks</h2>
+        <form id="sinksForm">
+            <h2>Input Carbon Sinks Data</h2>
+            <div class="form-group">
+                <label for="forests">1->Existing Forests absorption (tons CO2e):</label>
+                <input type="number" id="forests" required>
+            </div>
+            <div class="form-group">
+                <label for="afforestation">2->Planned Afforestation absorption (tons CO2e):</label>
+                <input type="number" id="afforestation" required>
+            </div>
+            <button type="submit"><a>Update Sinks</a></button>
+        </form>
+        <div class="chart-container">
+            <canvas id="sinksChart"></canvas>
+        </div>
+    </div>
+
+    <div id="Analysis" class="tabcontent">
+        <h2>Analysis</h2>
+        <p id="totalEmissions"></p>
+        <p id="totalAbsorption"></p>
+        <p id="netEmissions"></p>
+        <p id="suggestions"></p>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+               <span class="name">EmissionX</span>
+               <br>
+               <br>
+               <span class="place">Made With ❤️ in India</span>
+                </div>
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="Faqs.html">FAQ</a></li>
+                        <li><a href="solution.html">Solutions</a></li>
+                        <li><a href="trak.html">Calculator</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="project.html">Projects</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script src="calc.js"></script> 
+</body>
+</html>

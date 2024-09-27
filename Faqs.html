@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQS</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="Faqs.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+</head>
+<body>
+    <nav class="nav">
+     <a href="index.html"><img class=".logo" src="logo.png"
+        alt="" height="100px"></a>
+        <div id="nav-part2">
+            <h4><a href="trak.html">Carbon Calc</a></h4>
+            <h4><a href="solution.html">Solution</a></h4>
+            <h4><a href="project.html">Projects</a></h4>
+        </div>
+    </nav>
+ <div class="top">
+        <img src="forest.jpg" alt="">
+ </div>
+ <div class="text">
+    <h1>EmissionX is <span>different</span>.</h1>
+    <h3>We make decisions based on the greatest <br> impact for the climate.</h3>
+ </div>
+ <div class="down">
+    <div class="head">
+        <h1>Frequently asked questions ✍️</h1>
+        <h2>You’ve got the questions, we’ve got the answers!</h2>
+    </div>
+  <div class="faqs">
+    <h1 class="first">About EmissionX</h1>
+    <div id="faq-container-emissionx"></div>
+    
+    <h1 class="first">About Offsets</h1>
+    <div id="faq-container-offsets"></div>
+  </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+           <span class="name">EmissionX</span>
+           <br>
+           <br>
+           <span class="place">Made With ❤️ in India</span>
+            </div>
+            <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                    <li><a href="Faqs.html">FAQ</a></li>
+                    <li><a href="solution.html">Solutions</a></li>
+                    <li><a href="trak.html">Calculator</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="project.html">Projects</a></li> 
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our services</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+   <script>
+    const faqDataEmissionX = [
+    {
+        icon: '🚗',
+        question: 'How do you calculate my individual and my mine carbon footprint?',
+        answer: "To calculate your individual carbon footprint, we analyze factors such as your energy consumption, transportation habits, and daily lifestyle choices. For mining operations, we assess key factors including energy use, fuel consumption, mining processes, waste management, and emissions from equipment. By considering both direct and indirect emissions, we provide a comprehensive estimate of your personal and your mine's carbon footprint, helping you understand where improvements can be made to achieve carbon neutrality."
+    },
+    {
+        icon: '🌿',
+        question: 'Can carbon neutrality be achieved through offsetting alone in coal mines?',
+        answer: "Achieving carbon neutrality in coal mines requires a multifaceted approach — no single solution can accomplish it alone. Carbon offsetting plays a significant role, but it must be combined with innovative technologies, sustainable practices, and governmental support. While regulatory policies and clean technologies may take time to implement, offsetting offers an immediate way to balance emissions. At EmissionX, we start with offsetting and provide pathways for coal mines to further reduce their carbon footprint."
+    },
+    {
+        icon: '🌍',
+        question: 'What does EmissionX do?',
+        answer: 'EmissionX is a platform that helps Coal mines and businesses calculate, reduce, and offset their carbon footprint.'
+    },
+    {
+        icon: '👥',
+        question: 'Who is behind EmissionX?',
+        answer: 'EmissionX is developed by a dedicated team of students from Chitkara University.'
+    }
+];
+
+const faqDataOffsets = [
+    {
+        icon: '🌳',
+        question: 'How do you choose projects?',
+        answer: 'We choose the most impactful climate solutions worldwide based on rigorous assessments and the highest international quality standards for certified carbon offsetting. Our projects also provide benefits to local communities.'
+    },
+    {
+        icon: '💨',
+        question: 'What is CO2e?',
+        answer: 'CO2e describes the global warming potential of all greenhouse gases expressed in terms of the amount of CO2 that would result in the same amount of warming.'
+    },
+    {
+        icon: '🍃',
+        question: 'Can climate change be stopped with offsetting alone?',
+        answer: 'Carbon offsetting is crucial but must be combined with other solutions such as political regulation and clean technologies.'
+    },
+    {
+        icon: '💡',
+        question: 'Why are EmissionX’s three impact strategies crucial for the climate?',
+        answer: 'EmissionX focuses on three impact areas: Nature (planting trees), Tech (solar energy), and Social (clean cook stoves) for a holistic climate action approach.'
+    }
+];
+
+function createFAQSection(faqData, containerId) {
+    const container = document.getElementById(containerId);
+    faqData.forEach(item => {
+        const faqItem = document.createElement('div');
+        faqItem.classList.add('faq-item');
+        
+        const question = document.createElement('div');
+        question.classList.add('faq-question');
+        question.innerHTML = `
+            <span><span class="faq-icon">${item.icon}</span>${item.question}</span>
+            <span class="faq-toggle">+</span>
+        `;
+        
+        const answer = document.createElement('div');
+        answer.classList.add('faq-answer');
+        answer.textContent = item.answer;
+
+        faqItem.appendChild(question);
+        faqItem.appendChild(answer);
+        container.appendChild(faqItem);
+
+        question.addEventListener('click', () => toggleAnswer(answer, question.querySelector('.faq-toggle')));
+    });
+}
+
+function toggleAnswer(answerElement, toggleElement) {
+    answerElement.classList.toggle('active');
+    toggleElement.classList.toggle('active');
+}
+
+// Create FAQ sections for each heading
+createFAQSection(faqDataEmissionX, 'faq-container-emissionx');
+createFAQSection(faqDataOffsets, 'faq-container-offsets');
+
+   </script>
+</body>
+</html>
